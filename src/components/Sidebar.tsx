@@ -131,7 +131,7 @@ export default function Sidebar({ activeTab, setActiveTab, isCollapsed, setIsCol
           "mt-6 flex items-center px-4 text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-2.5",
           effectivelyCollapsed ? "justify-center" : "justify-start"
         )}>
-          <span className={cn(effectivelyCollapsed ? "px-0" : "px-0.5")}>V1.2.2</span>
+          <span className={cn(effectivelyCollapsed ? "px-0" : "px-0.5")}>V1.2.3</span>
         </div>
       </div>
     </aside>

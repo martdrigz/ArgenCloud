@@ -11,7 +11,7 @@ export default function Monitoring() {
   const [isMounted, setIsMounted] = React.useState(false);
 
   React.useEffect(() => {
-    const timerId = setTimeout(() => setIsMounted(true), 150);
+    const timerId = setTimeout(() => setIsMounted(true), 300);
     return () => clearTimeout(timerId);
   }, []);
 
@@ -60,7 +60,7 @@ export default function Monitoring() {
           </div>
           <div className="h-[250px] md:h-[350px] -ml-4 relative">
             {isMounted && (
-              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
+              <ResponsiveContainer width="99%" height="99%">
                 <AreaChart data={RESOURCE_HISTORY} margin={{ left: -10, right: 10 }}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
                 <XAxis dataKey="time" axisLine={false} tickLine={false} tick={{fontSize: 10}} />
@@ -83,7 +83,7 @@ export default function Monitoring() {
           </div>
           <div className="h-[250px] md:h-[350px] -ml-4 relative">
             {isMounted && (
-              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
+              <ResponsiveContainer width="99%" height="99%">
                 <BarChart data={RESOURCE_HISTORY} margin={{ left: -10, right: 10 }}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
                 <XAxis dataKey="time" axisLine={false} tickLine={false} tick={{fontSize: 10}} />

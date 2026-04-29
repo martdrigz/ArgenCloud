@@ -14,9 +14,11 @@ interface DashboardOverviewProps {
 export default function DashboardOverview({ setActiveTab }: DashboardOverviewProps) {
   const [currentTime, setCurrentTime] = React.useState(new Date());
   const [isMounted, setIsMounted] = React.useState(false);
+  const containerRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    const timerId = setTimeout(() => setIsMounted(true), 150);
+    // Aumentamos el delay para asegurar que el layout esté 100% calculado
+    const timerId = setTimeout(() => setIsMounted(true), 300);
     const dateTimer = setInterval(() => setCurrentTime(new Date()), 60000);
     return () => {
       clearTimeout(timerId);
@@ -102,9 +104,9 @@ export default function DashboardOverview({ setActiveTab }: DashboardOverviewPro
               <option>Última semana</option>
             </select>
           </div>
-          <div className="h-[250px] md:h-[300px] w-full relative">
+          <div className="h-[250px] md:h-[300px] w-full relative" ref={containerRef}>
             {isMounted && (
-              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
+              <ResponsiveContainer width="99%" height="99%">
                 <AreaChart data={RESOURCE_HISTORY} margin={{ left: -20, right: 10 }}>
                 <defs>
                   <linearGradient id="colorCpu" x1="0" y1="0" x2="0" y2="1">

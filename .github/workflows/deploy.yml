@@ -1,17 +1,8 @@
-name: Deploy to GitHub Pages
-
-on:
-  push:
-      branches:
-            - main
-              workflow_dispatch:
-
-              permissions:
-                contents: read
-                  pages: write
-                    id-token: write
-
-                    concurrency:
-                      group: "pages"
-                        cancel-in-progress: false
-                        
+name: Deploy
+on: [push, workflow_dispatch]
+jobs:
+  j:
+      runs-on: ubuntu-latest
+          steps:
+                - run: echo OK
+                
